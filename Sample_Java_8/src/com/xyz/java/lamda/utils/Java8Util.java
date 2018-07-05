@@ -3,6 +3,7 @@ package com.xyz.java.lamda.utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.xyz.java.lamda.pojo.Developer;
 import com.xyz.java.lamda.pojo.Person;
 
 
@@ -33,6 +34,19 @@ public final class Java8Util {
 		integerList.add(-4);
 		integerList.add(199);
 		return integerList;
+	}
+	
+	public static List<Developer> getDevelopers(){
+		List<Developer> devList = new ArrayList<Developer>();
+		devList.add(new Developer("Lee","Python","53000",3));
+		devList.add(new Developer("James","Ruby","33000",1));
+		devList.add(new Developer("Susan","DevOps","53000",2));
+		devList.add(new Developer("Sean","Java","93000",5));
+		devList.add(new Developer("Charles","VB","23000",1));
+		devList.add(new Developer("Tom","Java","23000",2));
+		devList.add(new Developer("Mark","Python","13000",1));
+		devList.add(new Developer("John","Ruby","3000",1));
+		return devList;
 	}
 
 }
