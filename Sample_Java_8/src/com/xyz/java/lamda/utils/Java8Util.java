@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.xyz.java.lamda.pojo.Developer;
 import com.xyz.java.lamda.pojo.Person;
+import com.xyz.java.lamda.pojo.Student;
 
 
 
@@ -13,7 +14,7 @@ public final class Java8Util {
 	public static List<Person> getPersons(){
 		List<Person> personList = new ArrayList<Person>();
 		Person p = new Person(1001,"Sachin","Tendulkar","M");
-		Person p1 = new Person(1002,"","Kohli","M");
+		Person p1 = new Person(1002,"Shekar","Dhavan","M");
 		Person p2 = new Person(1003,"M.S","Dhoni","M");
 		Person p3 = new Person(1004,"Mithali","Raj","F");
 		Person p4 = new Person(1005,"Rohit","Sharma","M");
@@ -47,6 +48,42 @@ public final class Java8Util {
 		devList.add(new Developer("Mark","Python","13000",1));
 		devList.add(new Developer("John","Ruby","3000",1));
 		return devList;
+	}
+	
+	public static List<Student> getStudents(){
+		List<Student> studList = new ArrayList<Student>();
+		studList.add(new Student("Varghese", 40));
+		studList.add(new Student("George", 60));
+		studList.add(new Student("Ken", 88));
+		studList.add(new Student("Victor", 62));
+		studList.add(new Student("Jane", 20));
+		studList.add(new Student("Michael", 83));
+		studList.add(new Student("Alex", 56));
+		studList.add(new Student("Abdul", 43));
+		return studList;
+	}
+
+	public static List<Person> getDuplicateEntryPersons(){
+		List<Person> personList = new ArrayList<Person>();
+		Person p = new Person(1001,"Sachin","Tendulkar","M");
+		Person p1 = new Person(1002,"Shekar","Dhavan","M");
+		Person p2 = new Person(1003,"M.S","Dhoni","M");
+		Person p3 = new Person(1004,"Mithali","Raj","F");
+		Person p4 = new Person(1005,"Rohit","Sharma","M");
+		Person p5 = new Person(1006,"Rahul","K.L","M");
+		Person p6 = new Person(1007,"Rohit","Sharma","M");
+		Person p7 = new Person(1008,"Rahul","K.L","M");
+		Person p8 = new Person(1009,"Shekar","Dhavan","M");
+		personList.add(p);
+		personList.add(p1);
+		personList.add(p2);
+		personList.add(p3);
+		personList.add(p4);
+		personList.add(p5);
+		personList.add(p6);
+		personList.add(p7);
+		personList.add(p8);
+		return personList;
 	}
 
 }
