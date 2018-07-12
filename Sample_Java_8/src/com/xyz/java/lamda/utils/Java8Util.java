@@ -1,6 +1,7 @@
 package com.xyz.java.lamda.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.xyz.java.lamda.pojo.Developer;
@@ -84,6 +85,13 @@ public final class Java8Util {
 		personList.add(p7);
 		personList.add(p8);
 		return personList;
+	}
+	
+	public static List<String> getListOfStrings(){
+		List<String> retList = new ArrayList<String>();
+		String[] arrItems = {"Basketball","Football","Carroms","Football","Carroms","Chess","Hockey","Batminton","Tennis","Chess","Cricket"};
+		Arrays.stream(arrItems).forEach(s -> retList.add(s));
+		return retList;
 	}
 
 }
