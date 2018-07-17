@@ -29,6 +29,23 @@ public class Client {
 		boolean flag = playerList.stream().allMatch(p -> p.getGender().equals("F"));
 		System.out.println("Using stream API is there any female player in the team "+flag);
 		
-	}
+		//Finding Match Any
+		System.out.println("--------------------  1. Stream Iteration anyMatch --------------------");
+		List<Developer> devList = Java8Util.getDevelopersInfo();
+		boolean matchAny = devList.stream().anyMatch(developer -> developer.getTechnology().equalsIgnoreCase("java"));
+		System.out.println("Is Java present in any technology "+matchAny);
+		
+		System.out.println("--------------------  2. Stream Iteration matchAll --------------------");
+		boolean matchAll = devList.stream().allMatch(p->p.getLevel() > -1);
+		System.out.println("All the members in the team are experienced  "+matchAll);
+		
+		System.out.println("--------------------  3. Stream Iteration noneMatch1 --------------------");
+		boolean javaDev = devList.stream().noneMatch(d->d.getTechnology().equals("Java"));
+		System.out.println("Do we have a java developer in out team "+javaDev);
 
+		System.out.println("--------------------  4. Stream Iteration noneMatch2 --------------------");
+		boolean hadoopDev = devList.stream().noneMatch(d->d.getTechnology().equals("Hadoop"));
+		System.out.println("Do we have a Hadoop developer in out team "+hadoopDev);
+	}
+		
 }

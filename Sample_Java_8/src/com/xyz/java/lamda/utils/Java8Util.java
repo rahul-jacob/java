@@ -93,5 +93,17 @@ public final class Java8Util {
 		Arrays.stream(arrItems).forEach(s -> retList.add(s));
 		return retList;
 	}
+	
+	public static List<Developer> getDevelopersInfo(){
+		List<Developer> devList = new ArrayList<Developer>();
+		devList.add(new Developer("Aravind", "Python", "10000", 3));
+		devList.add(new Developer("Sandy", "Java", "9500", 1));
+		devList.add(new Developer("Anandd", "Android", "11000", 2));
+		devList.add(new Developer("Vishnu", "Java", "45000", 4));
+		devList.add(new Developer("Sam", "C++", "17000", 3));
+		devList.add(new Developer("Anita", "Python", "9500", 1));
+		devList.add(new Developer("Basil", "Python", "2900", 0));
+		return devList;
+	}
 
 }
