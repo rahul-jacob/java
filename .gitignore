@@ -5,3 +5,5 @@ Sample_Java_8/.settings/
 Sample_Java_8/bin/
 Sample_Java_8/src/.project
 Sample_Java_8/src/.settings
+*.project
+*.prefs

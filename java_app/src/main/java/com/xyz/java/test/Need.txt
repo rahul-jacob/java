@@ -1,0 +1,31 @@
+Setup a spring boot project 
+Build Tool: Gradle 
+Logger: Log4J2 coupled MDC/ NDC
+
+
+Unit Test: JUnit along with standard mockers. 
+
+Others: Lombok
+
+https://google.github.io/styleguide/javaguide.html
+https://github.com/HPI-Information-Systems/Metanome/wiki/Installing-the-google-styleguide-settings-in-intellij-and-eclipse
+
+Lombok especially 
+Refer below for lombok. Its cake walk especially for young blood like you 
+https://howtodoinjava.com/automation/lombok-eclipse-installation-examples/
+
+
+
+nope 
+its nested or mapped diagnostic context 
+Concept is we log things but we loose track for which request 
+With this you can setup the context and that context will be available in any method
+
+So we can write filter and assign request id to each request so that request id will be available in any of the method 
+So while loggin we can use this request id. 
+so it is easier to corelate logged data 
+Ok so one more item to brush up. ->>
+
+
+Sonar
+ 

@@ -1,0 +1,46 @@
+Optional<T>
+
+public final class Optional<T> extends Object
+
+Java 8 has introduced a new class Optional in java.util package. It is used to represent a value is present or absent.
+The main advantage of this new construct is that No more too many null checks and NullPointerException.
+
+1.Static Methods
+a) Optional.ofNullable() : Returns an Optional describing the specified value, if non-null, otherwise returns an empty Optional.
+b) Optional.empty() Returns an empty Optional instance.
+c) Optional.of() Returns an Optional with the specified present non-null value throws null pointer exception
+
+2.Instance Method
+a) equals(Object obj) : Indicates whether some other object is "equal to" this Optional.
+b) filter(Predicate<? super T> predicate) : If a value is present, and the value matches the given predicate, return an 
+											Optional describing the value, otherwise return an empty Optional.
+c) flatMap(Function<? super T,Optional<U>> mapper) : If a value is present, apply the provided Optional-bearing mapping 
+													 function to it, return that result, otherwise return an empty Optional. 
+d) get() : If a value is present in this Optional, returns the value, otherwise throws NoSuchElementException.
+e) isPresent() : Return true if there is a value present, otherwise false.
+f) orElse(T other) : Return the value if present, otherwise return other.
+g) orElseGet(Supplier<? extends T> other) : Return the value if present, otherwise invoke other and return the result of that 
+											invocation.
+h) ifPresent(Consumer<? super T> consumer) : If a value is present, invoke the specified consumer with the value, otherwise
+                                             do nothing.
+i) orElseThrow(Supplier<? extends X> exceptionSupplier) : Return the contained value, if present, otherwise throw an 
+														  exception to be created by the provided supplier.
+
+3.Concrete Method
+a) empty() : Returns an empty Optional instance
+b) equals(Object obj) : Indicates whether some other object is "equal to" this Optional.
+c) filter(Predicate<? super T> predicate) : If a value is present, and the value matches the given predicate, return an 
+											Optional describing the value, otherwise return an empty Optional.
+d) flatMap(Function<? super T,Optional<U>> mapper) : If a value is present, apply the provided Optional-bearing mapping 
+													 function to it, return that result,otherwise return an empty Optional.
+e) get() : If a value is present in this Optional, returns the value, otherwise throws NoSuchElementException.
+f) ifPresent(Consumer<? super T> consumer) : If a value is present, invoke the specified consumer with the value, otherwise
+											 do nothing.
+g) isPresent() : Return true if there is a value present, otherwise false.
+h) of(T value) : Returns an Optional with the specified present non-null value.
+i) ofNullable(T value) : Returns an Optional describing the specified value, if non-null, otherwise returns an empty Optional.
+j) orElse(T other) : Return the value if present, otherwise return other.
+k) orElseGet(Supplier<? extends T> other) : Return the value if present, otherwise invoke other and return the result 
+											of that invocation.
+l) orElseThrow(Supplier<? extends X> exceptionSupplier) : Return the contained value, if present, otherwise throw an 
+														  exception to be created by the provided supplier. 													 											
