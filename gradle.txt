@@ -1,0 +1,40 @@
+1.gradle tasks : Default tasks for any gradle that shows all the tasks that are currently avaialble. Its comes from the plugin we define in build.gradle
+
+2.Suppose java pulgin has few tasks if you need to execute it then
+sourceSets{
+	main.java.srcDir src/main
+	test.java.srcDir src/test
+}
+srcDirs is a method which accepts a parameter which is src/main
+
+3.gradle build
+
+4. jar task
+jar{
+from configurations.compile.collect {zipTree it}//you can see the jar in
+	manifest.attributes "Main-Class" : "com.xyz.raul.Main.MainClass"
+
+}
+5. repository for declaring dependencies from maven repo
+e build path
+repositories{
+	mavenCentral() 
+	//mavenLocal() no need
+}
+
+depencencies{
+	compile "org.apache.commons:commons-lange:3.3.2"
+//
+
+6. gradle dependencies
+list's all the dependencies
+
+
+}
+
+
+
+
+
+
+
