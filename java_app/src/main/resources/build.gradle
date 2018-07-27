@@ -1,0 +1,90 @@
+
+buildscript{
+repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE')
+    }
+}
+/* ------------------------- plugins ------------------------- */
+apply plugin: 'java'
+apply plugin: 'eclipse'
+//apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'checkstyle'
+apply plugin: 'project-report'
+apply plugin: 'pmd'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+/* ------------------------- variables ------------------------- */
+ext{
+	springBootVersion = '2.0.3.RELEASE'
+	log4jVersion = '2.11.0'
+	swaggerVersion = '2.4.0'
+	jacksonVersion = '2.8.8'
+	postgresql = '42.0.0'
+	checkstyleVersion = '7.6.1'
+	pmdVersion = '5.4.1'
+}
+dependencies{
+/* ------------------------- starter-web ------------------------- */
+	compile 'org.springframework.boot:spring-boot-starter-web'
+/* ------------------------- starter-actuator ------------------------- */
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+/* ------------------------- starter jps ------------------------- */
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+/* ------------------------- starter-testing ------------------------- */
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+/* ------------------------- log4j ------------------------- */
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4jVersion
+  	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4jVersion
+/* ------------------------- swagger ------------------------- */
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: swaggerVersion
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: swaggerVersion 
+/* ------------------------- jackson ------------------------- */
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: jacksonVersion 
+/* ------------------------- Encrypt configuration parameters ------------------------- */
+    compile group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '1.15'
+/* ------------------------- postgresql ------------------------- */    
+    compile group: 'org.postgresql', name: 'postgresql', version : postgresql
+/* ------------------------- checkstyle ------------------------- */    
+    compile group: 'com.puppycrawl.tools', name: 'checkstyle', version: checkstyleVersion
+/* ------------------------- pmd ------------------------- */    
+    compile (group: 'net.sourceforge.pmd', name: 'pmd', version: '5.4.1')
+    
+    
+    //Code Quality - pmd, checkstyle and findbugs
+    //compile (group: 'net.sourceforge.pmd', name: 'pmd-core', version: '5.4.1')
+    //compile (group: 'com.google.code.findbugs', name: 'findbugs', version: '3.0.1')
+    //compile (group: 'com.puppycrawl.tools', name: 'checkstyle', version: '7.6.1') 
+}
+
+task mytask{
+	println 'Hellow World'+ springBootVersion
+	println 'log4j '+log4jVersion
+	println 'swagger '+swaggerVersion
+	println 'jackson '+jacksonVersion
+	println 'postgresql '+postgresql
+	println 'checkstyleVersion '+checkstyleVersion
+	println 'pmd '+pmdVersion
+	//println springBootVersion
+	//println springBootVersion
+}
+
+checkstyle{
+	toolVersion = checkstyleVersion
+	config = rootProject.resources.text.fromFile('etc/checkstyle/rules.xml')
+}
+
+pmd{
+	ruleSetConfig = rootProject.resources.text.fromFile('etc/pmd/rules.xml')
+	ignoreFailures = true
+	
+}
