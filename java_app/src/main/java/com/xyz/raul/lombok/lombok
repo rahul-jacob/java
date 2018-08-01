@@ -1,0 +1,32 @@
+Regerence http://www.baeldung.com/intro-to-project-lombok
+
+// @Getter - Generates Getters only for every member variable
+// @Setter - Generates Setters only for every member variable
+// @Getter @Setter - Generates getters and setters for every member variable
+// @NoArgsConstructor - Generates only no arg constructor
+/* @Setter & @Getters can be given at variable level also; if so getters and setters will be generated for that variable.
+   AccessLevel enumeration can be given at variable level to give a specific access provider eg @Setter(AccessLevel.PROTECTED)
+   protected Setter method will be generated for the variable.
+*/
+/*
+   @Accessors(fluent = true) @Getter- Getters will be added, but usual convension is getAge, getGender instead if we write
+   @Accessors(fluent = true) then instead of writing convensional getAge we invoke the setter as age, getFirstName as firstName.
+*/
+/*
+ @RequiredArgsConstructor 
+ Just add the @RequiredArgsConstructor annotation and you’d get a constructor for all the final fields int the class, just as 
+ you declared them.
+ Adding @NonNull to attributes makes our constructor check for nullability and throw NullPointerExceptions accordingly. This
+  would also happen if the fields were non-final and we added @Setter for them. 
+ */
+/*
+ @ToString will generate a toString() method including all class attributes.
+ @ToString(exclude = {“events”})
+ @EqualsAndHashCode will generate both equals() and hashCode() methods by default considering all relevant fields
+ @EqualsAndHashCode(of = {“authToken”}).
+ */
+/*
+ @Data and @Value will generate getters,setters,toString,hashcode,equals and constructor. both Data and Value are almost
+ similar with slight difference.
+ */
+//@Builder - Builder pattern when you create a builder object you can set all the member variable as a builder pattern
